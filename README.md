@@ -1,8 +1,6 @@
 Package cli
 ================
 
-:package_description
-
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#Example)
