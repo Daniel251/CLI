@@ -1,7 +1,14 @@
 
 {
-    "name": "your-vendor-name/package-name",
+    "name": "daniel251/cli",
     "description": "Package downloading rss data and saving it to csv file.",
+    "authors": [
+        {
+            "name": "Daniel Skiepko",
+            "email": "d.skiepko@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^5.3.3 || ^7.0"
     },
