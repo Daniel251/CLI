@@ -9,9 +9,7 @@
             "role": "Developer"
         }
     ],
-    "require": {
-        "php": "^5.3.3 || ^7.0"
-    },
+    "require": {},
     "autoload": {
     	"psr-4": {
         	"DanielSkiepko\\": "src/DanielSkiepko/"
