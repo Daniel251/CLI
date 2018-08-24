@@ -11,7 +11,7 @@ class NationalGeographic
 		} elseif ($csv_type == "csv:extended") {
 			$access = "a";
 		} else {
-			die ("Command $argv[1] not found!");
+			die ("Nie znaleziono komendy: $csv_type");
 		}
 
 		if (filter_var($link, FILTER_VALIDATE_URL) === FALSE) {
