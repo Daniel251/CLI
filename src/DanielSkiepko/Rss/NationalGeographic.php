@@ -25,19 +25,26 @@ class NationalGeographic
 		$array = json_decode($json,TRUE);
 		$items = $array["channel"]['item'];
 
-		$fp = fopen($path, $access);
+		if (file_exists($path) && ! is_writable($path)) {
+		    die('Nie masz uprawnień do zapisu pliku!');
+        }
 
-		if ('' == file_get_contents($path)) {
+		if (! $fp = @fopen($path, $access)) {
+            die('Nie mona zapisać pliku - plik jest otwarty!');
+        }
+		if (file_get_contents($path) == '') {
 			$head = ["title", "link", "description", "pubDate", "creator"];
-			fputcsv($fp, $head, ";"); 
-		} 
+			fputcsv($fp, $head, ";");
+		}
 		foreach ($items as $item) {
 		//Usuwanie <src ... /> z description
 		//	preg_match('/<img.*?\/>/', $item['description'], $mach);
 		//	$item['description'] = str_replace($mach, '' , $item['description']);
+            $item['pubDate'] = date("Y-m-d H:i:s",  strtotime($item['pubDate']));
 			unset($item['guid']);
 		    fputcsv($fp, $item, ";");
 		}
 		fclose($fp);
+		echo "Zapisano pomyślnie!";
 	}
 }
