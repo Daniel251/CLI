@@ -1,5 +1,11 @@
+
 {
-	"autoload": {
+    "name": "your-vendor-name/package-name",
+    "description": "Package downloading rss data and saving it to csv file.",
+    "require": {
+        "php": "^5.3.3 || ^7.0"
+    },
+    "autoload": {
     	"psr-4": {
         	"DanielSkiepko\\": "src/DanielSkiepko/"
     	}
